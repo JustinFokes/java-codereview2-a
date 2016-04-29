@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-archivesBaseName = "java-codereview2"
+archivesBaseName = "java-codereview-a"
 version = '1.0'
 mainClassName = "App"
 

@@ -1,7 +1,9 @@
-<h1>All Words</h1>
-<ul>
-  #foreach ($word in $words)
-    <li><a href="/words/$word.getId()">$word.getWord()</a></li>
-  #end
-</ul>
-<a href="/words/new">Add New Word</a>
+<div id="container">
+	<h1>All Words</h1>
+	<ul>
+	  #foreach ($word in $words)
+	    <li><a href="/words/$word.getId()">$word.getWord()</a></li>
+	  #end
+	</ul>
+	<a href="/words/new">Add New Word</a>
+</div>
