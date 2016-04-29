@@ -66,4 +66,19 @@ public class AppTest extends FluentTest {
     click("a", withText("Add a new definition"));
     assertThat(pageSource()).contains("Add a definition to the word Code");
   }
+  
+  @Test
+  public void DefinitionIsAddedAndDisplayed() {
+    goTo("http://localhost:4567/words/new");
+    fill("#word").with("Code");
+    submit(".btn");
+    click("a", withText("View Words"));
+    click("a", withText("Code"));
+    click("a", withText("Add a new definition"));
+    fill("#definition").with("Something that can be annoying");
+    submit(".btn");
+    click("a", withText("View Definitions"));
+    click("a", withText("Code"));
+    assertThat(pageSource()).contains("Something that can be annoying");
+  }
 }
