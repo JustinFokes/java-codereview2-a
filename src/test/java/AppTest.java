@@ -19,16 +19,43 @@ public class AppTest extends FluentTest {
     return webDriver;
   }
 
-  // @ClassRule
-  // public static ServerRule server = new ServerRule();
+  @ClassRule
+  public static ServerRule server = new ServerRule();
 
   // @Rule
   // public ClearRule clearRule = new ClearRule();
 
-  // @Test
-  // public void rootTest() {
-  //   goTo("http://localhost:4567/");
-  //   assertThat(pageSource()).contains("Something on your Index.vtl page");
-  // }
+  @Test
+  public void rootTest() {
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("Dictionary");
+  }
+  @Test
+  public void WordIsCreatedTest() {
+    goTo("http://localhost:4567/");
+    click("a", withText("Add a New Word"));
+    fill("#word").with("Code");
+    submit(".btn");
+    assertThat(pageSource()).contains("Your word has been saved.");
+  }
+
+  @Test
+  public void WordIsDisplayedTest() {
+    goTo("http://localhost:4567/words/new");
+    fill("#word").with("Code");
+    submit(".btn");
+    click("a", withText("View Words"));
+    assertThat(pageSource()).contains("Code");
+  }
+
+  @Test
+  public void wordShowPageDisplaysWord() {
+    goTo("http://localhost:4567/words/new");
+    fill("#word").with("Code");
+    submit(".btn");
+    click("a", withText("View Words"));
+    assertThat(pageSource()).contains("Code");
+  }
+
 
 }

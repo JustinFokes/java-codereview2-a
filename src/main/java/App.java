@@ -10,24 +10,41 @@ public class App {
     staticFileLocation("/public");
     String layout = "templates/layout.vtl";
 
-    // get("/", (request, response) -> {
-    //   Map<String, Object> model = new HashMap<String, Object>();
-    //   model.put("template", "templates/index.vtl");
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
+    get("/", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/index.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
-    // get("/input-page", (request, response) -> {
-    //   Map<String, Object> model = new HashMap<String, Object>();
+    get("/words/new", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/word-form.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+    
+    post("/words", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      String wordInput = request.queryParams("word");
+      Word newWord = new Word(wordInput);
+      model.put("template", "templates/word-success.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
-    //   String userInput = request.queryParams("inputName");
 
-    //   App newApp = new App();
+    get("/words", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("words", Word.all());
+      model.put("template", "templates/words.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
-    //   String varName = newApp.methodName(userInput);
-    //   model.put("varName", varName);
+    get("/words/:id", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Word word = Word.find(Integer.parseInt(request.params(":id")));
+      model.put("word", word);
+      model.put("template", "templates/word.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
-    //   model.put("template", "templates/input-page.vtl");
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
   }
 }
