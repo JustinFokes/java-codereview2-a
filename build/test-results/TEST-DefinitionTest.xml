@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DefinitionTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-04-29T17:07:19" hostname="Justins-MacBook-Pro.local" time="0.017">
+<testsuite name="DefinitionTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-04-29T22:41:10" hostname="Justins-MacBook-Pro.local" time="0.003">
   <properties/>
-  <testcase name="find_returnsDefinitionWithSameId_definitionTwo" classname="DefinitionTest" time="0.001"/>
-  <testcase name="clear_emptiesAllDefinitionFromArrayList_0" classname="DefinitionTest" time="0.001"/>
+  <testcase name="find_returnsDefinitionWithSameId_definitionTwo" classname="DefinitionTest" time="0.0"/>
+  <testcase name="clear_emptiesAllDefinitionFromArrayList_0" classname="DefinitionTest" time="0.0"/>
   <testcase name="getId_DefinitionInstantiatesWithAnId_1" classname="DefinitionTest" time="0.0"/>
-  <testcase name="all_returnsAllInstancesOfDefinition_true" classname="DefinitionTest" time="0.0"/>
+  <testcase name="all_returnsAllInstancesOfDefinition_true" classname="DefinitionTest" time="0.001"/>
   <testcase name="Definition_instantiatesCorrectly_true" classname="DefinitionTest" time="0.0"/>
-  <testcase name="Definition_instantiatesWithDefinition_String" classname="DefinitionTest" time="0.001"/>
+  <testcase name="Definition_instantiatesWithDefinition_String" classname="DefinitionTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

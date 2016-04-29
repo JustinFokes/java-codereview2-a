@@ -11,7 +11,7 @@ public class DefinitionTest {
   @Test
   public void Definition_instantiatesWithDefinition_String() {
     Definition definition = new Definition("the way things are");
-    assertEquals("the way things are", definition.getDefinition());
+    assertEquals("the way things are", definition.getDefinitionsFromDefinitionClass());
   }
   @Test
   public void all_returnsAllInstancesOfDefinition_true(){

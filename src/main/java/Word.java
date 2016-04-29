@@ -2,10 +2,9 @@ import java.util.ArrayList;
 
 public class Word {
   private static ArrayList<Word> wordList = new ArrayList<Word>();
-
   private String mWord;
   private int mId;
-  private ArrayList<Definition> mDefinitions; //plural!!!
+  private ArrayList<Definition> mDefinitions; 
 
   public Word(String word){
     mWord = word;
@@ -22,7 +21,7 @@ public class Word {
     return mId;
   }
 
-  public ArrayList<Definition> getDefinitions() { //plural!!!
+  public ArrayList<Definition> getDefinitionsFromWordClass() { 
     return mDefinitions;
   }
 

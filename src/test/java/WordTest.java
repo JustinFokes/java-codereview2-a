@@ -46,14 +46,14 @@ public class WordTest{
    @Test
    public void getTasks_initiallyReturnsEmptyList_ArrayList() {
      Word word = new Word("code");
-     assertEquals(0, word.getDefinitions().size());
+     assertEquals(0, word.getDefinitionsFromWordClass().size());
    }
    @Test
    public void addDefinition_addsDefinitionToList_true() {
      Word word = new Word("code");
      Definition definition = new Definition("something that you do");
      word.addDefinition(definition);
-     assertTrue(word.getDefinitions().contains(definition));
+     assertTrue(word.getDefinitionsFromWordClass().contains(definition));
    }
 }
 

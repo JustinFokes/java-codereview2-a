@@ -8,7 +8,6 @@ import java.util.Map;
 import java.util.HashMap;
 import spark.ModelAndView;
 import static org.fluentlenium.core.filter.FilterConstructor.*;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class AppTest extends FluentTest {
@@ -57,5 +56,14 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Code");
   }
 
-
+  @Test
+  public void wordDefinitionFormIsDisplayed() {
+    goTo("http://localhost:4567/words/new");
+    fill("#word").with("Code");
+    submit(".btn");
+    click("a", withText("View Words"));
+    click("a", withText("Code"));
+    click("a", withText("Add a new definition"));
+    assertThat(pageSource()).contains("Add a definition to Code");
+  }
 }

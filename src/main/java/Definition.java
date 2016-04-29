@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 
-public class Definition{
+public class Definition {
   private String mDefinition;
   private Integer mId;
   private static ArrayList<Definition> definitionList = new ArrayList<Definition>();
@@ -11,13 +11,13 @@ public class Definition{
     definitionList.add(this);
     mId = definitionList.size();
   }
-  public String getDefinition(){
+  public String getDefinitionsFromDefinitionClass(){
     return mDefinition;
   }
   public Integer getId(){
   	return mId;
   }
-  public static ArrayList<Definition>  all(){
+  public static ArrayList<Definition> all(){
   	return definitionList;
   }
   public static void clear(){
@@ -26,7 +26,7 @@ public class Definition{
   public static Definition find(Integer id){
   	try{
   		return definitionList.get(id -1);
-  	} catch (IndexOutOfBoundsException e) {
+  	} catch (IndexOutOfBoundsException exception) {
   		return null;
   	}
   }
