@@ -10,7 +10,7 @@ public class Word {
   public Word(String word){
     mWord = word;
     wordList.add(this);
-    mId = instances.size();
+    mId = wordList.size();
     mDefinitions = new ArrayList<Definition>();
   }
 
@@ -26,7 +26,7 @@ public class Word {
     return mDefinitions;
   }
 
-  public void addDefinition(Defintion definition) {
+  public void addDefinition(Definition definition) {
     mDefinitions.add(definition);
   }
 
@@ -38,7 +38,7 @@ public class Word {
     wordList.clear();
   }
 
-  public static Category find (int id) {
+  public static Word find (int id) {
     try {
       return wordList.get(id - 1);
     } catch (IndexOutOfBoundsException exception) {

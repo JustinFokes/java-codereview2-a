@@ -29,6 +29,5 @@ public class Definition{
   	} catch (IndexOutOfBoundsException e) {
   		return null;
   	}
-  	}
   }
 }
