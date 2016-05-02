@@ -27,6 +27,7 @@ public class AppTest extends FluentTest {
     goTo("http://localhost:4567/");
     assertThat(pageSource()).contains("Dictionary");
   }
+
   @Test
   public void WordIsCreatedTest() {
     goTo("http://localhost:4567/");
@@ -38,15 +39,6 @@ public class AppTest extends FluentTest {
 
   @Test
   public void WordIsDisplayedTest() {
-    goTo("http://localhost:4567/words/new");
-    fill("#word").with("Code");
-    submit(".btn");
-    click("a", withText("View Words"));
-    assertThat(pageSource()).contains("Code");
-  }
-
-  @Test
-  public void wordShowPageDisplaysWord() {
     goTo("http://localhost:4567/words/new");
     fill("#word").with("Code");
     submit(".btn");
